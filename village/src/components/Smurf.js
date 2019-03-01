@@ -8,8 +8,8 @@ const Smurf = props => {
       <strong>{props.data.height} tall</strong>
       <p>{props.data.age} smurf years old</p>
       <div>
-        <Edit onClick = {() => props.update(props.id, props.data)}/>
-        <XCircle onClick = {() => props.delete(props.id)}/>
+        <Edit onClick = {() => props.update(props.data)}/>
+        <XCircle onClick = {() => props.delete(props.data.id)}/>
       </div>
     </div>
   );

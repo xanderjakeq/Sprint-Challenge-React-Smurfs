@@ -64,13 +64,7 @@ class SmurfForm extends Component {
             name="name"
             type = 'text'
           />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="age"
-            value={this.state.age}
-            name="age"
-            type = 'number'
-          />
+          
           <input
             onChange={this.handleInputChange}
             placeholder="height"
@@ -78,7 +72,15 @@ class SmurfForm extends Component {
             name="height"
             type = 'number'
           />
-          <button type="submit">Add to the village</button>
+          
+          <input
+            onChange={this.handleInputChange}
+            placeholder="age"
+            value={this.state.age}
+            name="age"
+            type = 'number'
+          />
+          <button type="submit">{this.props.update ? 'Update' : 'Add to the village'}</button>
         </form>
       </div>
     );

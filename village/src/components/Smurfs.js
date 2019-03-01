@@ -9,8 +9,7 @@ class Smurfs extends Component {
     super(props)
 
     this.state = {
-      editingSmurf: null,
-      editingSmurfData: {}
+      editingSmurfData: null
     }
   }
   handleDelete = id => {
@@ -21,10 +20,9 @@ class Smurfs extends Component {
       console.log(err)
     })
   }
-  handleUpdateClick = (id, data) => {
+  handleUpdateClick = (data) => {
     console.log(data)
     this.setState({
-      editingSmurf: id,
       editingSmurfData: data
     })
   }
@@ -48,12 +46,11 @@ class Smurfs extends Component {
                 key={smurf.id}
                 delete = {this.handleDelete}
                 update = {this.handleUpdateClick}
-                editingSmurf = {this.state.editingSmurf}
               />
             );
           })}
         </ul>
-        {this.state.editingSmurf !== null ? <SmurfForm update handleUpdate = {this.handleUpdate} data = {this.state.editingSmurfData}/> : null}
+        {this.state.editingSmurfData != null? <SmurfForm update handleUpdate = {this.handleUpdate} data = {this.state.editingSmurfData}/> : null}
       </div>
     );
   }

@@ -4,8 +4,8 @@ import {NavLink} from 'react-router-dom'
 export default () => {
     return(
         <nav>
-            <NavLink to = "/">Home</NavLink>
-            <NavLink to = "/add">Add Smurf</NavLink>
+            <NavLink exact to = "/"  activeClassName = 'active'>Home</NavLink>
+            <NavLink exact to = "/add" activeClassName = 'active'>Add Smurf</NavLink>
         </nav>
     )
 }

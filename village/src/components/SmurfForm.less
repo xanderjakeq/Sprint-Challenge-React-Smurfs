@@ -1,0 +1,33 @@
+.SmurfForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        input{
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            &:focus{
+                outline: none;
+            }    border-bottom: 2px solid @smurfBlue;
+        }
+
+        button{
+            background-color: @blueBlue;
+            padding: 15px;
+            font-family: 'David Libre', serif;
+            border: none;
+            border-radius: 5px;
+            &:hover{
+                background-color: @smurfBlue;
+                cursor: pointer;
+            }
+            
+        }
+    }
+}

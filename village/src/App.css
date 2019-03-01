@@ -1,3 +1,80 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  margin-top: 100px;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: 0 50px;
+}
+nav .active {
+  color: navy;
+  border-bottom: 1px solid lightblue;
+}
+.SmurfForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SmurfForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.SmurfForm form input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(40, 140, 226, 0.4);
+}
+.SmurfForm form input:focus {
+  outline: none;
+}
+.SmurfForm form button {
+  background-color: #288CE2;
+  padding: 15px;
+  font-family: 'David Libre', serif;
+  border: none;
+  border-radius: 5px;
+}
+.SmurfForm form button:hover {
+  background-color: rgba(40, 140, 226, 0.4);
+  cursor: pointer;
+}
+.Smurf {
+  width: fit-content;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+  background-color: rgba(40, 140, 226, 0.4);
+}
+.Smurf h3 {
+  font-family: 'David Libre', serif;
+}
+.Smurf p {
+  font-family: 'Telex', sans-serif;
+}
+.Smurfs h1 {
+  font-family: 'Merienda One', cursive;
+}
+.Smurfs ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

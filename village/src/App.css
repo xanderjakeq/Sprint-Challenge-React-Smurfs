@@ -70,6 +70,14 @@ nav .active {
 .Smurf p {
   font-family: 'Telex', sans-serif;
 }
+.Smurf div {
+  display: flex;
+  justify-content: flex-end;
+}
+.Smurf div svg:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
 .Smurfs h1 {
   font-family: 'Merienda One', cursive;
 }

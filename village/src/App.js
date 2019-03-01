@@ -36,7 +36,7 @@ class App extends Component {
         <div className="App">
           <NavBar/>
           <Route exact path = "/add" render = {props => <SmurfForm {...props} updateSmurfs = {this.getSmurfs}/>}/>
-          <Route path = '/' exact render= {props => <Smurfs {...props} smurfs={this.state.smurfs} />}/>
+          <Route path = '/' exact render= {props => <Smurfs {...props} updateSmurfs = {this.getSmurfs} smurfs={this.state.smurfs} />}/>
         </div>
       </Router>
     );

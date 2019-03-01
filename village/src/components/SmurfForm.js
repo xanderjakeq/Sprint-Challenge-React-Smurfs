@@ -27,7 +27,6 @@ class SmurfForm extends Component {
     event.preventDefault();
     // add code to create the smurf using the api
     axios.post('http://localhost:3333/smurfs', this.state).then(res => {
-      console.log(res.data)
       this.props.history.push('/')
       this.props.updateSmurfs()
     }).catch(err => {
@@ -56,7 +55,7 @@ class SmurfForm extends Component {
     }
     return (
       <div className="SmurfForm" style = {this.props.update? updatingStyle: {}}>
-        <form onSubmit={this.props.update ? () => this.props.handleUpdate(this.props.data.id, this.state): this.addSmurf}>
+        <form onSubmit={this.props.update ? (e) => this.props.handleUpdate(e, this.props.data.id, this.state): this.addSmurf}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"

@@ -14,22 +14,23 @@ class Smurfs extends Component {
   }
   handleDelete = id => {
     axios.delete(`http://localhost:3333/smurfs/${id}`).then(res => {
-      console.log(res)
       this.props.updateSmurfs()
     }).catch(err => {
       console.log(err)
     })
   }
   handleUpdateClick = (data) => {
-    console.log(data)
     this.setState({
       editingSmurfData: data
     })
   }
-  handleUpdate = (id, data) => {
+  handleUpdate = (e, id, data) => {
+    e.preventDefault()
     axios.put(`http://localhost:3333/smurfs/${id}`,data).then(res => {
-      console.log(res)
       this.props.updateSmurfs()
+      this.setState({
+        editingSmurfData: null
+      })
     }).catch(err => {
       console.log(err)
     })

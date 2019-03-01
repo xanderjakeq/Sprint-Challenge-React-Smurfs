@@ -12,6 +12,17 @@ class SmurfForm extends Component {
     };
   }
 
+  componentDidMount(){
+    if(this.props.update){
+      let data = this.props.data
+      this.setState({
+        name: data.name,
+        age: data.age,
+        height: data.height
+      })
+    }
+  }
+
   addSmurf = event => {
     event.preventDefault();
     // add code to create the smurf using the api
@@ -35,9 +46,17 @@ class SmurfForm extends Component {
   };
 
   render() {
+    let updatingStyle = {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+    height: '100%',
+    backgroundColor: 'white',
+    }
     return (
-      <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
+      <div className="SmurfForm" style = {this.props.update? updatingStyle: {}}>
+        <form onSubmit={this.props.update ? () => this.props.handleUpdate(this.props.data.id, this.state): this.addSmurf}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"

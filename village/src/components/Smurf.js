@@ -4,11 +4,11 @@ import {XCircle, Edit} from 'react-feather';
 const Smurf = props => {
   return (
     <div className="Smurf">
-      <h3>{props.name}</h3>
-      <strong>{props.height} tall</strong>
-      <p>{props.age} smurf years old</p>
+      <h3>{props.data.name}</h3>
+      <strong>{props.data.height} tall</strong>
+      <p>{props.data.age} smurf years old</p>
       <div>
-        <Edit/>
+        <Edit onClick = {() => props.update(props.id, props.data)}/>
         <XCircle onClick = {() => props.delete(props.id)}/>
       </div>
     </div>
